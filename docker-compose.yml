@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      TZ: Asia/Seoul
+      WATCHTOWER_CLEANUP: 'true'
+      WATCHTOWER_POLL_INTERVAL: 60
+    restart: unless-stopped
+  app:
+    image: adele559/seunghyo-react
+    ports:
+      - "3000:80"
+    environment:
+      NODE_ENV: production
