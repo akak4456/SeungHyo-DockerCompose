@@ -11,7 +11,7 @@ services:
       WATCHTOWER_POLL_INTERVAL: 86400
     restart: unless-stopped
   app:
-    image: adele559/seunghyo-react:main
+    image: adele559/seunghyo-react
     ports:
       - "3306:3000"
     environment:
